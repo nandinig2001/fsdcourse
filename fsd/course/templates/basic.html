@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Enter your description here" />
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="{%static 'health/fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{%static 'health/css/bootstrap.min.css' %}">
+ 
+
+  <style type="text/css">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #063460;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid #063460;
+}
+
+.dropdown-toggle:hover {
+    border-bottom: none;
+}
+
+.active{
+    border-bottom: 2px solid #063460;
+}
+
+.nav-link{
+    color: #063460;
+}
+
+.feat {
+    padding: 1% 4%;
+    text-align: center;
+}
+
+.head {
+    padding-top: 7%;
+}
+
+.heading-quote{
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.heading-text{
+    text-align: left;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    font-size: 1.2em;
+}
+
+  </style>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="{%static 'course/css/web.css' %}">
+  
+  <!-- <script src="js/main.js"></script> -->
+
+  
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
+                    width="30" height="30"> Paramount</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="#">Assignments</a>
+                    </li>
+                    <li class=" dropdown px-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="Profile picture"
+                                width="30" height="30">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">About</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <hr class="featurette-divider mt-5">
+
+    <div class="feat row featurette mt-5 ">
+      <div class="col-md-7 mt-5 head">
+        <h1 class="heading-quote">The beautiful thing about learning is nobody can take it away from you.</h1>
+        <p class="heading-text">He who learns but does not think, is lost! <br>He who thinks but does not learn is in great danger.</p>
+      </div>
+      <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="450" height="450" src="https://image.freepik.com/free-vector/cartoon-brain-idea-creative-design_24877-14826.jpg">
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+  <script src="{%static 'health/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{%static 'health/js/popper.min.js' %}"></script>
+  <script src="{%static 'health/js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'health/js/jquery.validate.min.js' %}"></script>
+  <script src="{%static 'health/js/jquery.validate.min.js' %}"></script>
+  <script src="{%static 'health/js/lightslider.js' %}"></script>
+  <script src="{%static 'health/js/main.js' %}"></script>
+</body>
+
+</html>
