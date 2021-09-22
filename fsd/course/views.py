@@ -6,7 +6,10 @@ from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
+from .models import Assignment
 from django.contrib.auth import authenticate,login, logout
+from datetime import datetime
+
 # Create your views here.
 def index(request):
     return render(request,'home.html')
@@ -19,7 +22,7 @@ def registerPage(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
-            messages.success(request,'Account was created for'+user)
+            messages.success(request,'Account created for '+user)
 
             return redirect('login')
     context ={'form':form}
@@ -32,10 +35,10 @@ def loginPage(request):
         user = authenticate(request, password=password, username=username)
         if user is not None:
             login(request,user)
-            print("Loggeg In")
+            print("Logged In")
             return redirect('home')
         else:
-          messages.info(request, 'Username OR password is incorrect')
+          messages.info(request, 'Incorrect username OR password')
     context = {}
     return render(request,'login.html')
 
@@ -55,3 +58,16 @@ def coverPage(request):
     context ={}
     print("success")
     return render(request,'index.html')
+
+def assignment(request):
+    if request.method == 'POST':
+
+        name = request.POST.get('name', '')
+        g1 = request.POST.get('g1', '')
+        w1 = request.POST.get('w1', '')
+        g2 = request.POST.get('g2', '')
+        w2 = request.POST.get('w2','')
+        assignment = Assignment( name=name, g1 = g1, w1 = w1, g2 =g2, w2 = w2)
+        assignment.save()
+        messages.success(request,'Solution Submitted')
+    return render(request,'assignment.html')

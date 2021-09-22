@@ -1,0 +1,126 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}Assignments{% endblock %}
+
+{% block body %}
+
+
+ <style type="text/css">
+
+
+body{
+    background: #ffffff;
+}
+
+.contact-form h4{
+    margin-bottom: 2%;
+    margin-top: 2%;
+    
+    color: #ffff;
+}
+.contact-form{
+    background: #5A5D9D;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    margin-bottom: 4%;
+    margin-top: -10%;
+    text-align: center;
+    color: #ffff;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #390050;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+  </style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+           
+            <form method="post" id="contactForm" name="contactForm">{% csrf_token%}
+                <h3>PROBLEM STATEMENTS</h3>
+                <h4>Q1</h4>
+                <h4>Q2</h4>
+               <div class="row justify-content-center">
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="User Name" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="g1" id="g1" class="form-control" placeholder="Problem Statement 1 Github Link" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="w1" id="w1" class="form-control" placeholder="Problem Statement 1 Website Link" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="g2" id="g2" class="form-control" placeholder="Problem Statement 2 Github Link" value="" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"name="w2" id="w2" class="form-control" placeholder="Problem Statement 2 Website Link" value="" />
+                        </div>
+                        <div class="form-group justify-content-center">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            <span class="submitting"></span>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </form>
+            
+
+
+        
+</div>
+
+
+
+
+
+{% endblock %}
