@@ -25,16 +25,19 @@
     }
 
     .card-image img {
-        max-height: 100%;
+        height: 100%;
         max-width: 100%;
         border-radius: 8px 8px 0px 0;
     }
 
+    .login-button{
+      margin-top: 5%;
+        }
  
     .card-heading {
         font-size: 18px;
         font-weight: bold;
-        background: #fff;
+        background: #E1F5F2;
         padding: 10px 15px;
     }
 
@@ -98,10 +101,10 @@
 <!-- Bootstrap Static Header -->
 <div style="background: url(https://www.microsoft.com/en-us/research/uploads/prod/1997/02/Labs-Migrate-Solid-Blue-Header-Background.jpg)" class="jumbotron bg-cover text-white" style=" background-size: cover !important;">
   <div class="container py-5 text-center">
-      <h1 class="display-4 font-weight-bold text-white">Full Stack Web Development</h1>
+      <h1 class="display-5 font-weight-bold text-white">Full Stack Web Development</h1>
       <p class="mb-0 text-white" style="font-family: 'Poppins';">This course, designed for both students with and without experience in Full Stack Web Development </p>
       <p class=" mb-0 text-white" style="font-family: 'Poppins';">makes you a well-rounded developer, ready to be hired by top MNCs.</p>
-      <a href="#" role="button " class="btn btn-primary px-5 font-weight-bold text-white">Join for Free</a>
+      <a href="{% url 'login' %}" role="button " class="btn btn-primary px-5 font-weight-bold text-white login-button">Join for Free</a>
   </div>
 </div>
 
@@ -219,7 +222,7 @@
   <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'course/images/subjects/html.png' %}" alt="" />
+        <img src="{%static 'course/images/subjects/html.png' %}" height="250rem" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
@@ -245,15 +248,29 @@
   <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'course/images/subjects/angular.png' %}" alt="" />
+        <img src="{%static 'course/images/subjects/firebase.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a >ANGULAR</a>
+          <a >FIREBASE</a>
         </div>
       </div>
     </div>
   </li>
+
+  <li class="item-e">
+    <div class="box">
+      <div class="slide-img">
+        <img src="{%static 'course/images/subjects/django.png' %}" alt="" />
+      </div>
+      <div class="detail-box">
+        <div class="type">
+          <a >DJANGO</a>
+        </div>
+      </div>
+    </div>
+  </li>
+
 
   <li class="item-e">
     <div class="box">
@@ -324,7 +341,7 @@
 							<div class="card-header" id="headingOne">
 								<h5 class="mb-0 ">
 							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							  <i class="fa fa-plus main text-black"></i>Why choose FSD course at Paramount?
+							  <i class="fa fa-plus main text-black"></i> Why choose FSD course at Paramount?
 							</button>
 						  </h5>
 							</div>
@@ -340,7 +357,7 @@
 							<div class="card-header" id="headingTwo">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							 <i class="fa fa-plus main" ></i>Advantage of doing course at Paramount?
+							 <i class="fa fa-plus main" ></i> Advantage of doing course at Paramount?
 							</button>
 						  </h5>
 							</div>
@@ -354,7 +371,7 @@
 							<div class="card-header" id="headingThree">
 								<h5 class="mb-0" >
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							  <i class="fa fa-plus main"></i>What education or experience do I need to get into fsd?
+							  <i class="fa fa-plus main"></i> What education or experience do I need to get into fsd?
 							</button>
 						  </h5>
 							</div>
@@ -368,7 +385,7 @@
 							<div class="card-header" id="headingFour">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-							  <i class="fa fa-plus main"></i>What assessments are included?
+							  <i class="fa fa-plus main"></i> What assessments are included?
 							</button>
 						  </h5>
 							</div>
@@ -383,7 +400,7 @@
 							<div class="card-header" id="headingThree">
 								<h5 class="mb-0">
 							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							  <i class="fa fa-plus main"></i>How will i receive my test reports?
+							  <i class="fa fa-plus main"></i> How will i receive my test reports?
 							</button>
 						  </h5>
 							</div>
@@ -393,10 +410,6 @@
 								</div>
 							</div>
 						</div>
-
-                        
-				
-
 					</div>
 				</div>	
 			</div>
