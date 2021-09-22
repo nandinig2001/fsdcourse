@@ -59,6 +59,13 @@ def coverPage(request):
     print("success")
     return render(request,'index.html')
 
+
+
+def agnlanding(request):
+    context ={}
+    print("success")
+    return render(request,'agnlanding.html')
+
 def assignment(request):
     if request.method == 'POST':
 

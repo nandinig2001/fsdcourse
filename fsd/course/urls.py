@@ -10,6 +10,7 @@ urlpatterns = [
     path('quiz',views.quizPage,name='quiz'),
     path('aboutus',views.aboutPage,name='aboutus'),
     path('assignment',views.assignment,name='assignment'),
+    path('agnlanding',views.agnlanding,name='agnlanding'),
     path('',views.coverPage,name='cover'), 
 
 ]

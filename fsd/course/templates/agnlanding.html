@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Assignment</title>
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/course/css/index.css">
+    <script src="https://kit.fontawesome.com/b862bb0d81.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
+                    width="30" height="30"> Paramount</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="{% url 'quiz' %}">Quiz</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="#">Assignments</a>
+                    </li>
+                    <li class=" dropdown px-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="Profile picture"
+                                width="30" height="30">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr class="featurette-divider mt-5">
+    <div class="feat row ">
+      <div class="col-lg-7 col-md-12 head">
+        <h1 class="heading-quote">Solve the Assignments</h1>
+        <p class="heading-text">Solve two problem statements to get practical hold on what you have learnt <br>Our experts will grade your assignments once submitted</p>
+      </div>
+      <div class="col-lg-5 col-md-12">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100%" src="./static/course/images/subjects/xyz.png">
+      </div>
+    </div>
+
+
+    <section class="beginner">
+    <h2>Beginner</h2>
+    <hr style="height:2px; width:100%; border-width:0; color:gray; background-color:gray">
+    <div class="row">
+    <div class="col-lg-4 col-md-6">
+    <div class="card" >
+        <a href=""><img src="https://html.com/wp-content/uploads/html-hpg-featured-new.png" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+        <div class="card-body">
+          <h4 class="card-title">HTML</h4>
+          <p class="card-text">Learn the standard markup language for documents designed to be displayed in a web browser.</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+      <div class="card" >
+        <a href=""><img src="https://i.ytimg.com/vi/1Rs2ND1ryYc/maxresdefault.jpg" class="card-img-top" alt="..." height="220rem" width="100%"></a>
+        <div class="card-body">
+          <h4 class="card-title">CSS</h4>
+          <p class="card-text">Learn CSS to define styles for your web pages, including the design, layout and variations in display.</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card" >
+            <a href=""><img src="https://www.blog.duomly.com/wp-content/uploads/2020/01/bootstrap-tutorial-by-duomly-img.png" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+            <div class="card-body">
+              <h4 class="card-title">Bootstrap</h4>
+              <p class="card-text">Bootstrap is a potent front-end framework used to create modern websites and web apps.</p>
+            </div>
+          </div>
+          </div>
+      </div>
+    </section>
+    <section class="intermediate">
+        <h2>Intermediate</h2>
+        <hr style="height:2px; width:100%; border-width:0; color:gray; background-color:gray">
+        <div class="row">
+        <div class="col-lg-4 col-md-6">
+        <div class="card" >
+            <a href=""><img src="https://res.cloudinary.com/sdetpro/image/upload/v1614406021/git_github_tutorial_82ce216b3d.png" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+            <div class="card-body">
+              <h4 class="card-title">Git & Github</h4>
+              <p class="card-text">Git is a version control system while GitHub is a cloud-based hosting service that lets you manage Git repositories.</p>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+          <div class="card" >
+            <a href=""><img src="https://repository-images.githubusercontent.com/200666631/0060c080-d060-11ea-9698-98d89d68fc6d" class="card-img-top" alt="..." height="220rem" width="100%"></a>
+            <div class="card-body">
+              <h4 class="card-title">JavaScript</h4>
+              <p class="card-text">Learn how to add dynamic behavior to the webpage and add special effects to the webpage.</p>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card" >
+                <a href=""><img src="https://i2.wp.com/www.techjblog.com/wp-content/uploads/2021/01/1.png?fit=1920%2C1080&ssl=1" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+                <div class="card-body">
+                  <h4 class="card-title">Django</h4>
+                  <p class="card-text">Django is a high-level Python web framework that enables rapid development of secure websites.</p>
+                </div>
+              </div>
+              </div>
+          </div>
+        </section>
+        <section class="advance">
+            <h2>Advance</h2>
+            <hr style="height:2px; width:100%; border-width:0; color:gray; background-color:gray">
+            <div class="row">
+            <div class="col-lg-4 col-md-6">
+            <div class="card" >
+                <a href=""><img src="https://ccweb.imgix.net/https%3A%2F%2Fimg.youtube.com%2Fvi%2F9OPP_1eAENg%2Fhqdefault.jpg?ar=16%3A9&auto=format&cs=strip&fit=crop&h=380&ixlib=php-3.3.0&w=535&s=58de9f7a57412247b4b2a5a15570e576" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+                <div class="card-body">
+                  <h4 class="card-title">MongoDB</h4>
+                  <p class="card-text">MongoDB is an open-source document database and leading NoSQL database for storing user data.</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+              <div class="card" >
+                <a href=""><img src="https://cdn-media-1.freecodecamp.org/images/1*3WTslHrSuJfqlj3qZRRFPQ.png" class="card-img-top" alt="..." height="220rem" width="100%"></a>
+                <div class="card-body">
+                  <h4 class="card-title">React Js</h4>
+                  <p class="card-text">React.js is an open-source JavaScript library used for building user interfaces like single-page applications.</p>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <a href=""><img src="https://koenig-media.raywenderlich.com/uploads/2018/03/Firebase-GetStarted-twitter.png" class="card-img-top" alt="..."  height="220rem" width="100%"></a>
+                    <div class="card-body">
+                      <h4 class="card-title">Firebase</h4>
+                      <p class="card-text">Google Firebase is an application development software that enables developers to develop web apps.</p>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+            </section>
+
+
+
+
+            <footer><p class="copyright">© Paramount</p></footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
