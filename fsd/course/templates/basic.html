@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="stylesheet" href="{%static 'health/fonts/icomoon/style.css' %}">
   <link rel="stylesheet" href="{%static 'health/css/bootstrap.min.css' %}">
- 
+
 
   <style type="text/css">
   * {
@@ -65,10 +65,10 @@
 
   <!-- Style -->
   <link rel="stylesheet" href="{%static 'course/css/web.css' %}">
-  
+
   <!-- <script src="js/main.js"></script> -->
 
-  
+
 
 </head>
 
@@ -79,11 +79,13 @@
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
                     width="30" height="30"> Paramount</a>
+              <span>Hello, {{request.user}}</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
+                
                 <ul class="navbar-nav">
                     <li class="nav-item px-2">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -103,7 +105,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">About</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -117,6 +119,7 @@
       <div class="col-md-7 mt-5 head">
         <h1 class="heading-quote">The beautiful thing about learning is nobody can take it away from you.</h1>
         <p class="heading-text">He who learns but does not think, is lost! <br>He who thinks but does not learn is in great danger.</p>
+
       </div>
       <div class="col-md-5">
           <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="450" height="450" src="https://image.freepik.com/free-vector/cartoon-brain-idea-creative-design_24877-14826.jpg">
