@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paramount</title>
+        <link rel="icon" href="./images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./static/course/css/aboutus.css">
+        <script src="https://kit.fontawesome.com/b862bb0d81.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
+                    width="30" height="30"> Paramount</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="#">Assignments</a>
+                    </li>
+                    <li class=" dropdown px-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="Profile picture"
+                                width="30" height="30">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item abt-active" href="./about.html">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="about-header">
+        <div class="row">
+            <div class="col-lg-7">
+                <h1>We share knowledge with the world</h1>
+            </div>
+            <div class="col-lg-5">
+                <div class="image">
+                    <img class="about-img" src="./static/course/images/subjects/about.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="about-content" >
+        <h1 class="about-mb">Leadership and learning are <br> indispensable to each other.</h1>
+        <h4 class="about-mb">Whether you want to learn or to share what you know, you’ve come to the right place. <br> As a global destination for online learning, we connect people through knowledge.</h4>
+        <a class="blue-btn" href="{% url 'home' %}">Learn More</a>
+
+        <div class="row about-cards">
+            <div class="col-lg-4 col-md-6" >
+                <div class="card card-1" style="width: 95%;">
+                    <div class="card-body">
+                      <h5 class="card-title">Quiz</h5>
+                      <p class="card-text">Take this interactive quiz to help you find out how self-motivated you are so that you can motivate yourself effectively, and get more things done.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-md-6" >
+                <div class="card card-2" style="width: 95%;">
+                    <div class="card-body">
+                      <h5 class="card-title">Assignments</h5>
+                      <p class="card-text">The motivation is to gain enough knowledge and understand that part of curriculum well. <br>You must have a deep understanding of the topic before doing the assignment. </p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4 col-md-6" >
+                <div class="card card-3 " style="width: 95%;">
+                    <div class="card-body">
+                      <h5 class="card-title">E-learning</h5>
+                      <p class="card-text">Upgrade your education with courses in the fields of Web Development. <br>Study whenever you want, however you want and at a speed that suits you.</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p class="copyright">©️ Paramount</p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>

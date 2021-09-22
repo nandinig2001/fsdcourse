@@ -9,7 +9,7 @@ from .forms import CreateUserForm
 from django.contrib.auth import authenticate,login, logout
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'home.html')
 
 def registerPage(request):
     form = CreateUserForm()
@@ -33,7 +33,7 @@ def loginPage(request):
         if user is not None:
             login(request,user)
             print("Loggeg In")
-            return redirect('index')
+            return redirect('home')
         else:
           messages.info(request, 'Username OR password is incorrect')
     context = {}
@@ -41,4 +41,17 @@ def loginPage(request):
 
 def logoutPage(request):
     logout(request)
-    return redirect('login')
+    return redirect('cover')
+
+def quizPage(request):
+    context ={}
+    return render(request,'quiz.html')
+
+def aboutPage(request):
+    context ={}
+    return render(request,'aboutus.html')
+
+def coverPage(request):
+    context ={}
+    print("success")
+    return render(request,'index.html')
