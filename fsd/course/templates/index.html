@@ -1,430 +1,413 @@
 {% extends 'basic.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
 {% block body %}
-{% load static %}
+
 
  <style type="text/css">
-.hover {
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 60%;
-}
 
-.hover-overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 90;
-  transition: all 0.4s;
-}
-
-.hover img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.3s;
-}
-
-.hover-content {
-  position: relative;
-  z-index: 99;
+     body {
+    font-family: 'Poppins';
 }
 
 
-/* DEMO 1 ============================== */
-.hover-1 img {
-  width: 95%;
-  position: absolute;
-  top: 0;
-  left: -5%;
-  transition: all 0.3s;
-}
+    a {
+        text-decoration: none;
+    }
 
-.hover-1-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  transition: all 0.4s;
-}
+    /* Card Styles */
 
-.hover-1 .hover-overlay {
-  background: rgba(0, 0, 0, 0.1);
-}
+    .card-sl {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
-.hover-1-description {
-  transform: translateY(0.5rem);
-  transition: all 0.4s;
-  opacity: 0;
-}
+    .card-image img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px 8px 0px 0;
+    }
 
-.hover-1:hover .hover-1-content {
-  bottom: 2rem;
-}
+ 
+    .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
 
-.hover-1:hover .hover-1-description {
-  opacity: 1;
-  transform: none;
-}
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
 
-.hover-1:hover img {
-  left: 0;
-}
 
-.hover-1:hover .hover-overlay {
-  opacity: 0;
-}
+    .card-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        width: 100%;
+        background-color: #6BC5D2;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .card-button:hover {
+        text-decoration: none;
+        background-color: #1D3461;
+        color: #fff;
+
+    }
+
+
+    @-webkit-keyframes pulse {
+        0% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+        70% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+        }
+
+        100% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+        }
+      }
+
+
+
 
 
   </style>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 50vh;"> 
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" style="height: 50vh;">
-    <div class="carousel-item active">
-      <img class="d-block w-100 homeBanner" src="{%static 'health/images/16.jpg' %}"
-        alt="First slide">
-    </div>
-    <div class="carousel-item" style="height: 50vh;">
-      <img class="d-block w-100 homeBanner" src="{%static 'health/images/1.jpg' %}" alt="Second slide">
-    </div>
-    <div class="carousel-item" style="height: 50vh;">
-      <img class="d-block w-100 homeBanner" src="{%static 'health/images/2.jpg' %}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<div class="container">
-  <div class="row py-5">
-    <!-- Hospital Login -->
-    <div class="col-lg-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{%static 'health/images/doc.jpg' %}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Hospital</h5>
-          <p class="card-text">Register/Login as an hospital to see latest appointments. </p><br>
-          <a href="account/hregister/" class="btn btn-primary">Register</a>
-          <a href="account/hlogin/" class="btn btn-primary">Login</a>
-        </div>
-      </div>
-    </div>
-    <!-- Patients Login -->
-    <div class="col-lg-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{%static 'health/images/patient.jpg' %}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Patient</h5>
-          <p class="card-text">Register/Login to schedule an appointment or a test in your nearest hospital</p>
-          <a href="account/pregister/" class="btn btn-primary">Register</a>
-          <a href="account/plogin/" class="btn btn-primary">Login</a>
-        </div>
-      </div>
-    </div>
-    <!-- Emergency -->
-    <div class="col-lg-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{%static 'health/images/emergency.jpg' %}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Emergency</h5>
-          <p class="card-text">Immediate booking for bed, ICU, oxygen cylinder, etc during medical emergencies </p>
-          <a href="#" class="btn btn-primary">Emergency Booking</a>
-        </div>
-      </div>
-    </div>
+<!-- Bootstrap Static Header -->
+<div style="background: url(https://www.microsoft.com/en-us/research/uploads/prod/1997/02/Labs-Migrate-Solid-Blue-Header-Background.jpg)" class="jumbotron bg-cover text-white" style=" background-size: cover !important;">
+  <div class="container py-5 text-center">
+      <h1 class="display-4 font-weight-bold text-white">Full Stack Web Development</h1>
+      <p class="mb-0 text-white" style="font-family: 'Poppins';">This course, designed for both students with and without experience in Full Stack Web Development </p>
+      <p class=" mb-0 text-white" style="font-family: 'Poppins';">makes you a well-rounded developer, ready to be hired by top MNCs.</p>
+      <a href="#" role="button " class="btn btn-primary px-5 font-weight-bold text-white">Join for Free</a>
   </div>
 </div>
 
-<!-- What would you like to do today-->
- <div class="py-5">
-    <h3 class=" mt-1 mb-5" style="text-align: center;">What would you like to do today</h3>
-    
-    <div class="row" style="padding-left: 200px">
-      <!-- DEMO 1 Item-->
-      <div class="col-lg-5 mb-1 mb-lg-5 " >
-        <div class="hover hover-1 text-white rounded"><img src="https://media.istockphoto.com/photos/uses-laptop-while-talking-with-patient-stock-photo-picture-id1295918822?b=1&k=20&m=1295918822&s=170667a&w=0&h=O893zFnVFLy2DjafiK7KAs8MeSpS2e-P8TUIjRshqjE=" alt="">
-          <div class="hover-overlay"></div>
-          <div class="hover-1-content px-5 py-4">
-          <a href="#" style="color: #000; font-size: 1.5rem; font-weight:bold">Book An Appointment</a>
-            
-            <p class="hover-1-description font-weight-bold mb-0" style="color: #212529;">A patient-centric service that gives patients the freedom to consult a doctor at his convenience from anywhere, anytime. </p>
+<!-- Info bar -->
+<div class="container mt-2">
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-12">
+          <div class="card p-1 mt-2">
+              
+              <div class="row mt-1 g-1 px-8 mb-1 justify-content-center">
+                  
+                  <div class="col-md-2">
+                      <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/ueLEPGq.png" width="50">
+                          <div class="text-center mg-text"> <span class="mg-text">Free Access</span> </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/tmqv0Eq.png" width="50">
+                          <div class="text-center mg-text"> <span class="mg-text">Study Resources</span> </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-2">
+                      <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/Z7BJ8Po.png" width="50">
+                          <div class="text-center mg-text"> <span class="mg-text">100% Online</span> </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/D0Sm15i.png" width="50">
+                        <div class="text-center mg-text"> <span class="mg-text">Quizzes</span> </div>
+                    </div>
+                </div>
+                  <div class="col-md-2">
+                      <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/YLsQrn3.png" width="50">
+                          <div class="text-center mg-text"> <span class="mg-text">Assignments</span> </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-      <!-- DEMO 1 Item-->
-      <div class="col-lg-5 ">
-        <div class="hover hover-1 text-white rounded"><img src="https://images.unsplash.com/photo-1575467322691-1e971b0a6d32?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGxhYiUyMHRlc3R8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          <div class="hover-overlay"></div>
-          <div class="hover-1-content px-5 py-4">
-            <a href="/lab1" style="color: #000; font-size: 1.5rem; font-weight:bold">Book A Lab Test</a>
-            <p class="hover-1-description font-weight-bold mb-0" style="color: #212529;"> Lab right to the consumer’s doorstep, with home sample collection, same-day reports and affordable pricing on lab tests.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- specialist-->
-<div class="container" style="text-align: center;">
-  <div class="row">
-    <div class="col-xs-3">
-      <h2>Specialist</h2>
-    </div>
   </div>
 </div>
-<section class="text-gray-100 body-font">
-  <div class="container px-5 py-8 mb-5 mx-auto">
-    <div class="flex flex-wrap">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/cancer.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Cancer</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/cardiology.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Cardiology</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/dentist.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Dentist</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/dermatology.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Dermatology</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/diabetes.png' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Diabetes</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/orthopedic.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Orthopedic</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/pulmonology.png' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Pulmonology</h2>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="{%static 'health/images/specialist/sexology.jpg' %}">
-        </a>
-        <div class="mt-4">
-          <h2 class="text-gray-900 title-font text-lg font-medium">Sexology</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Top hospital -->
-<div class="container" style="text-align: center;">
+
+<div class="container" style="text-align: center; margin-top:3rem ;">
   <div class="row">
     <div class="col-xs-8">
-      <h2>Best Hospitals in Mumbai</h2>
+      <h2>Delivery Methods </h2>
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-3">
+          <div class="card-sl">
+              <div class="card-image">
+                  <img
+                      src="https://images.unsplash.com/photo-1452830978618-d6feae7d0ffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fG9ubGluZSUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
+              </div>
+              <div class="card-heading">
+                ONLINE CLASS
+              </div>
+              <div class="card-text">
+                Access your training from the comforts of your home, college or any other location you prefer. Learn with a motivated group of teachers.
+              </div>
+          </div>
+          
+      </div>
+      <div class="col-md-3">
+        <div class="card-sl">
+            <div class="card-image">
+                <img
+                    src="https://media.istockphoto.com/photos/online-exam-picture-id174938113?b=1&k=20&m=174938113&s=170667a&w=0&h=7Z0TxQlIRkAZGY80sQ2_cXSmNe_TBk-AUfZvHi75aI4=" />
+            </div>
+            <div class="card-heading">
+              BLENDED CLASS
+            </div>
+            <div class="card-text">
+              Master theory and programming concepts with our recorded videos.The courses are a mix of theory and hands-on exercises and many challenges.
+            </div>
+        </div>
+        
+    </div>
+      <div class="col-md-3">
+        <div class="card-sl">
+            <div class="card-image">
+                <img
+                    src="https://media.istockphoto.com/photos/young-woman-working-from-home-picture-id1221479375?b=1&k=20&m=1221479375&s=170667a&w=0&h=vjVl9w-J6SVG9R_-jBhyEcEGGQmqI8GaT2SKxBclNj4=" />
+            </div>
+            <div class="card-heading">
+                Knowledge Assesment
+            </div>
+            <div class="card-text">
+              Assess your post-course confidence with learning online by participating in the assignments, quiz or tests which concludes the course.
+            </div>
+        </div>
+
+      
+        
+    </div>
+  </div>  
+</div>  
+
+
+
+<!-- topic -->
+<div class="container" style="text-align: center; margin-top:3rem ;">
+  <div class="row">
+    <div class="col-xs-8">
+      <h2>Programming Languages / Tools you will learn </h2>
+    </div>
+  </div>
+</div>
+
 <ul id="autoWidth" class="cs-hidden">
-  <li class="item-a">
-    <div class="box">
-      <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/hinduja.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="type">
-          <a href="#">P D Hinduja National Hospital and Research Center</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="item-b">
-    <div class="box">
-      <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/lilavati.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="type">
-          <a href="#">Lilavati Hospital and Research Center</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="item-c">
-    <div class="box">
-      <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/nanavati.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="type">
-          <a href="#">Balabhai Nanavati Hospital</a><br>
-        </div>
-      </div>
-    </div>
-  </li>
-  <li class="item-d">
-    <div class="box">
-      <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/hiranandani.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
-      </div>
-      <div class="detail-box">
-        <div class="type">
-          <a href="#">Hiranandani Hospital</a><br>
-        </div>
-      </div>
-    </div>
-  </li>
   <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/jaslok.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/html.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Jaslok Hospital</a><br>
+          <a >HTML</a>
         </div>
       </div>
     </div>
   </li>
-  <li class="item-f">
+
+  <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/kohinoor.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/css.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Kohinoor Hospital Pvt. Ltd.</a><br>
+          <a >CSS</a>
         </div>
       </div>
     </div>
   </li>
-  <li class="item-g">
+
+  <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/fortis.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/angular.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Fortis Hospitals Ltd.</a><br>
+          <a >ANGULAR</a>
         </div>
       </div>
     </div>
   </li>
-  <li class="item-h">
+
+  <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/sevenHills.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/boot.jpg' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Seven Hills Healthcare Pvt. Ltd.</a><br>
+          <a >BOOTSTRAP</a>
         </div>
       </div>
     </div>
   </li>
-  <li class="item-i">
+
+  <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/kokilaben.png' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/git.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Kokilaben Dhirubhai Ambani Hospital and Research Institute</a>
+          <a >GIT</a>
         </div>
       </div>
     </div>
   </li>
-  <li class="item-j">
+
+  <li class="item-e">
     <div class="box">
       <div class="slide-img">
-        <img src="{%static 'health/images/hospital_logo/saifee.jpg' %}" alt="" />
-        <div class="overlay">
-          <a href="#" class="buy-btn">Book Now</a>
-        </div>
+        <img src="{%static 'course/images/subjects/js.png' %}" alt="" />
       </div>
       <div class="detail-box">
         <div class="type">
-          <a href="#">Saifee Hospital</a><br>
+          <a >JAVASCRIPT</a>
         </div>
       </div>
     </div>
   </li>
+
+  <li class="item-e">
+    <div class="box">
+      <div class="slide-img">
+        <img src="{%static 'course/images/subjects/react.jpg' %}" alt="" />
+      </div>
+      <div class="detail-box">
+        <div class="type">
+          <a >REACT</a>
+        </div>
+      </div>
+    </div>
+  </li>  
 </ul>
+
+<div class="container-fluid bg-gray" id="accordion-style-1">
+	<div class="container" style="text-align: center; margin-top:3rem ;margin-bottom:3rem">
+		<section>
+			<div class="row">
+
+        <div class="col-xs-8">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+      
+    
+				<div class="col-10 mx-auto">
+					<div class="accordion" id="accordionExample">
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h5 class="mb-0 ">
+							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							  <i class="fa fa-plus main text-black"></i><i class="fa fa-angle-double-right mr-3"></i>Why choose FSD course at Paramount?
+							</button>
+						  </h5>
+							</div>
+
+							<div id="collapseOne" class="collapse show fade" aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									Full stack developer is an in-demand job and is becoming more popular. A person trained in full stack web development online course is an asset to the company due to their diverse skills. They are paid a high salary in the web development industry. To get a job as a full stack developer, you need to know front-end and back-end technologies as well as be familiar with databases. Learn popular technologies like AWS lambda, Python, MERN stack and more with online course on full stack development.
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							 <i class="fa fa-plus main" ></i><i class="fa fa-angle-double-right mr-3" ></i>Advantage of doing course at Paramount?
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseTwo" class="collapse fade" aria-labelledby="headingTwo" data-parent="#accordionExample">
+								<div class="card-body">
+								We offer you one-on-one mentoring. You can seek the help of your mentor who will be your guide and sounding board and help you prepare. We give access to all the course material after the completion of the course. You get a team of dedicated support staff to answer your questions. You get to apply your learning in practice with assignments and quiz.
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0" >
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							  <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right mr-3"></i>What education or experience do I need to get into fsd?
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseThree" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionExample">
+								<div class="card-body">
+									The path covers the foundations of web dev with hands-on practice. By the end, you’ll be ready to apply to jobs and build powerful sites.
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingFour">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+							  <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right mr-3"></i>What assessments are included?
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseFour" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionExample">
+								<div class="card-body">
+									There are topic-end assisted and unassisted projects, followed by lesson-end quiz and assignments. There are also phase-end tests which provide learning on building functional features of a web application based on the concepts covered in that particular phase.
+								</div>
+							</div>
+						</div>
+
+                        <div class="card">
+							<div class="card-header" id="headingThree">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							  <i class="fa fa-plus main"></i><i class="fa fa-angle-double-right mr-3"></i>How will i receive my test reports?
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseThree" class="collapse fade" aria-labelledby="headingThree" data-parent="#accordionExample">
+								<div class="card-body">
+									Certificates will be provided at the end of every course completed
+								</div>
+							</div>
+						</div>
+
+                        
+				
+
+					</div>
+				</div>	
+			</div>
+		</section>
+	</div>
+</div>
+
+
+
+
+
+
 
 {% endblock %}
