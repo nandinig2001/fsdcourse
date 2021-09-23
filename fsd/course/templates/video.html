@@ -1,0 +1,111 @@
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramount</title>
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../../static/course/css/video.css">
+    
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
+                    width="30" height="30"> Paramount</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="{% url 'quiztopic' %}">Quiz</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link " href="">Assignments</a>
+                    </li>
+                    <li class=" dropdown px-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="Profile picture"
+                                width="30" height="30">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+    <section class="Video">
+        <h2 class="videotopic">{{ head }}</h2>
+        
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-3 mx-auto selection justify-content-center">
+                {% for item in videos %}
+                <div class="card mx-auto mb-4">
+                    <a href="{% url 'video' topicName=topicid videoid=item.videoid %}" >
+                    <div class="card-body">
+                        <h4 class="card-title text-align-center">{{ item.title }}</h4>
+                        
+                        
+                        
+                        <!-- <p class="card-text">{{ item.date }}</p> -->
+                    </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="col-lg-8 col-md-9">
+                <div class="yt-video" width="80%"></div>
+                {% for items in loadedvideo %}
+                <div width="90%">{% video items.url '700x450' %}</div>
+                <div >
+                    <h2 class="videodesc">{{ items.title }}</h2>
+                    <h5>{{ items.description }}</h5>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+            <footer><p class="copyright">© Paramount</p></footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+

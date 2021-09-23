@@ -3,7 +3,9 @@ from .models import Page
 from django.contrib import admin
 from . import models
 from .models import *
+
 admin.site.register(Assignment)
+admin.site.register(Video)
 # Register your models here.
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):

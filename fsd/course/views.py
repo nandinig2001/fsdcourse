@@ -48,8 +48,9 @@ def logoutPage(request):
 
 def quizPage(request,topicid):
     if request.method == 'POST':
-        print(request.POST)
-        questions=Quizz.objects.filter(topic='1')
+             
+
+        questions=Quizz.objects.filter(topic=topicid)
         score=0
         wrong=0
         correct=0
@@ -77,7 +78,8 @@ def quizPage(request,topicid):
     else:
         questions=Quizz.objects.filter(topic=topicid)
         context = {
-            'questions':questions
+            'questions':questions,
+            'topicid':topicid
         }
         return render(request,'quiz.html',context)
 
@@ -126,9 +128,23 @@ def profile(request):
 
             return redirect('profile')
     else:
-
+        
         Pages=Page.objects.filter(user=request.user)
-        context={'Pages':form}
+        context={'Pages':Pages}
         return render(request,'profile.html',context)
+
 def quiztopic(request):
     return render(request,'quiztopic.html')
+
+
+def video(request, topicName,videoid):
+    
+    head=''
+    videos = Video.objects.filter(topic = topicName)
+    loadedvideo = Video.objects.filter(topic = topicName , videoid = videoid)
+    print(topicName)
+    for items in videos:
+        head = items.topicName
+    count = Video.objects.filter().count()
+    
+    return render(request,'video.html', context={'videos': videos, 'head': head, 'loadedvideo':loadedvideo, 'topicid':topicName })

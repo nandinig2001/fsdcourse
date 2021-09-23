@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from embed_video.fields import EmbedVideoField
 from django.db import models
 
 # Create your models here.
@@ -27,15 +28,18 @@ class Topic(models.Model):
     def _str_(self):
         return self.topicName
 
-# class Video(models.Model):
-#     title = models.CharField(max_length=40)
-#     date = models.DateTimeField(auto_now_add=True)
-#     description = models.CharField(max_length=200, null=True)
-#     topicName = models.CharField(max_length=40, null=True )
-#     url = EmbedVideoField()
-#
-#     def _str_(self):
-#         return self.title
+class Video(models.Model):
+    videoid = models.CharField(max_length=40,null=True)
+    topic = models.ForeignKey(Topic,on_delete=models.CASCADE)
+    title = models.CharField(max_length=40)
+    date = models.DateTimeField(auto_now_add=True)
+    description = models.CharField(max_length=200, null=True)
+    topicName = models.CharField(max_length=40, null=True )
+    url = EmbedVideoField()
+
+    def __str__(self):
+        return self.title
+
 class Quizz(models.Model):
     topic=models.ForeignKey(Topic,on_delete=models.CASCADE)
     question = models.CharField(max_length=200,null=True)

@@ -96,8 +96,26 @@
         </div>
         <div class="col-lg-8 col-md-8" >
           <form action="/action_page.php" class="pro-content">
-            {%csrf_token%}
-            {{Pages.as_p}}
+            <div class="mb-3">
+              <label for="fname" class="form-label">First name:</label>
+              <input class="form-control" type="text" id="fname" name="fname" value="{{Page.pfname}}">
+            </div>
+            <div class="mb-3">
+              <label for="lname" class="form-label">Last name:</label>
+              <input type="text" class="form-control" id="lname" name="lname" value="{{Page.plname}}">
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Mobile Number:</label>
+              <input type="text" class="form-control" id="mobile" name="mobile" value="{{Page.pmobile}}">
+            </div>
+            <div class="mb-3">
+              <label for="college" class="form-label">College:</label>
+              <input type="text" id="college" class="form-control" name="college" value="{{Page.pcollege}}">
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">Age:</label>
+              <input type="text" class="form-control" id="age" name="age" value="{{Page.page}}">
+            </div>
             <input class="form-control blue-btn mb-3" type="submit" value="Save" >
           </form>
           <!-- {% endfor %} -->
