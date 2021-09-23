@@ -6,7 +6,7 @@ from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
-from .models import Assignment
+from .models import Assignment,Page
 from django.contrib.auth import authenticate,login, logout
 from datetime import datetime
 
@@ -78,3 +78,8 @@ def assignment(request):
         assignment.save()
         messages.success(request,'Solution Submitted')
     return render(request,'assignment.html')
+
+def profile(request):
+    Pages=Page.objects.filter(user=request.user)
+    context={'Pages':Pages}
+    return render(request,'profile.html',context)

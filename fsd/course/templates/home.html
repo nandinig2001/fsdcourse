@@ -37,7 +37,7 @@
                         <a class="nav-link " href="{% url 'quiz' %}">Quiz</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link " href="#">Assignments</a>
+                        <a class="nav-link " href="{% url 'assignment'%}">Assignments</a>
                     </li>
                     <li class=" dropdown px-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -46,7 +46,7 @@
                                 width="30" height="30">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                             <li><a class="dropdown-item" href="{% url 'aboutus' %}">About</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
