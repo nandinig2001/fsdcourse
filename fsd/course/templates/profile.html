@@ -1,36 +1,119 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Form</title>
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https: //kit.fontawesome.com/b862bb0d81.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      font-family: Poppins;
+    }
+    .head{
+      font-size: 5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    .header {
+      padding: 5%;
+    }
+    .nav-link:hover {
+      border-bottom: 2px solid #063460;
+    }
+
+    .dropdown-toggle:hover {
+      border-bottom: none;
+    }
+
+    .active {
+      border-bottom: 2px solid #063460;
+    }
+
+    .nav-link {
+      color: #063460;
+    }
+
+    .profile {
+      padding: 5% 10%;
+      background-color: #E1F5F2;
+    }
+
+    .student {
+      width: 90%;
+      padding: 3rem 0;
+    }
+    .profile label {
+      font-size: 1.4rem;
+    }
+    .blue-btn {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: white;
+    font-size: 25px;
+    background: #063460;
+    padding: 11px 15px 11px 15px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .blue-btn:hover {
+    background: #6BC5D2;
+    text-decoration: none;
+    color: white;
+  }
+  .pro-content{
+    padding: 3rem 0;
+  }
+  </style>
+</head>
+
+<body>
+  <html>
+
   <body>
-    <!DOCTYPE html>
-    <html>
-    <body>
+    <section class="header"><h2 class="head" >Profile</h2></section>
 
-    <h2>HTML Forms</h2>
     <!-- {% for Page in Pages %} -->
-    <form action="/action_page.php">
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="{{Page.pfname}}"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="{{Page.plname}}"><br><br>
-      <label for="mobile">Mobile Number:</label><br>
-      <input type="text" id="mobile" name="mobile" value="{{Page.pmobile}}"><br>
-      <label for="college">College:</label><br>
-      <input type="text" id="college" name="college" value="{{Page.pcollege}}"><br>
-      <label for="age">Age:</label><br>
-      <input type="text" id="age" name="age" value="{{Page.page}}"><br>
-      <input type="submit" value="Save">
+    <section class="profile">
 
-    </form>
-    <!-- {% endfor %} -->
-    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <img class="student" src="./static/course/images/subjects/student.png" alt="">
+        </div>
+        <div class="col-lg-8 col-md-8" >
+          <form action="/action_page.php" class="pro-content">
+            {%csrf_token%}
+            {{Pages.as_p}}
+            <input class="form-control blue-btn mb-3" type="submit" value="Save" >
+          </form>
+          <!-- {% endfor %} -->
 
-    </body>
-    </html>
+        </div>
+      </div>
+
+    </section>
+
 
 
   </body>
+
+  </html>
+
+
+</body>
+
 </html>

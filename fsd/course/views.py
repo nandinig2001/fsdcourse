@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
-from .models import Assignment,Page
+from .forms import *
+from .models import *
 from django.contrib.auth import authenticate,login, logout
 from datetime import datetime
 
@@ -46,9 +46,41 @@ def logoutPage(request):
     logout(request)
     return redirect('cover')
 
-def quizPage(request):
-    context ={}
-    return render(request,'quiz.html')
+def quizPage(request,topicid):
+    if request.method == 'POST':
+        print(request.POST)
+        questions=Quizz.objects.filter(topic='1')
+        score=0
+        wrong=0
+        correct=0
+        total=0
+        for q in questions:
+            total+=1
+            print(request.POST.get(q.question))
+            print(q.ans)
+            print()
+            if q.ans ==  request.POST.get(q.question):
+                score+=10
+                correct+=1
+            else:
+                wrong+=1
+        percent = score/(total*10) *100
+        context = {
+            'score':score,
+            'time': request.POST.get('timer'),
+            'correct':correct,
+            'wrong':wrong,
+            'percent':percent,
+            'total':total
+        }
+        return render(request,'result.html',context)
+    else:
+        questions=Quizz.objects.filter(topic=topicid)
+        context = {
+            'questions':questions
+        }
+        return render(request,'quiz.html',context)
+
 
 def aboutPage(request):
     context ={}
@@ -79,7 +111,24 @@ def assignment(request):
         messages.success(request,'Solution Submitted')
     return render(request,'assignment.html')
 
+
 def profile(request):
-    Pages=Page.objects.filter(user=request.user)
-    context={'Pages':Pages}
-    return render(request,'profile.html',context)
+    user=request.user
+    print(user.page.pfname)
+    form = ProfileUpdateForm(request.POST or None,instance=user.page)
+    if request.method=='POST':
+        print("Successful")
+
+        if form.is_valid():
+            form.save()
+        # user = form.cleaned_data.get('username')
+        # messages.success(request,'Account created for '+user)
+
+            return redirect('profile')
+    else:
+
+        Pages=Page.objects.filter(user=request.user)
+        context={'Pages':form}
+        return render(request,'profile.html',context)
+def quiztopic(request):
+    return render(request,'quiztopic.html')

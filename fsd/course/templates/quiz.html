@@ -1,46 +1,61 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <link rel="stylesheet" href="./static/course/css/quizz.css">
-    <title>Document</title>
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Q. What does CSS stands for?</h3>
-            </div>
-            <div class="modal-body">
-                <div class="col-xs-3 5"> </div>
-                <div class="quiz" id="quiz" data-toggle="buttons">
-                  <label class="element-animation1 btn btn-lg btn-danger btn-block">
-                    <span class="btn-label">
-                      <i class="glyphicon glyphicon-chevron-right"></i>
-                    </span>
-                    <input type="radio" name="q_answer" value="1"> Computer Style Sheets
-                  </label>
-                  <label class="element-animation2 btn btn-lg btn-danger btn-block">
-                    <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                    <input type="radio" name="q_answer" value="2">Cascading Style Sheets
-                  </label>
-                  <label class="element-animation3 btn btn-lg btn-danger btn-block">
-                    <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                    <input type="radio" name="q_answer" value="3">Creative Style Sheets
-                  </label>
-                  <label class="element-animation4 btn btn-lg btn-danger btn-block">
-                    <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                    <input type="radio" name="q_answer" value="4"> Colorful Style Sheets
-                  </label>
-                </div>
-            </div>
-        </div>
+<div class="container ">
+<h1>Welcome to DataFlair Quiz</h1>
+
+<div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div>
+
+ <form method='post' action=''>
+    {% csrf_token %}
+    {% for q  in questions%}
+    <div class="form-group">
+      <label for="question">{{q.question}}</label>
     </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="{{q.op1}}" checked>
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op1}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="{{q.op2}}">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op2}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="{{q.op3}}">
+            <label class="form-check-label" for="gridRadios1">
+                {{q.op3}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="{{q.op4}}">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.op4}}
+            </label>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+    <input id='timer' type='hidden' name="timer" value="">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    {% block script %}
+        <script>
+
+            console.log('hello world')
+            const timer=document.getElementById('displaytimer')
+            console.log(timer.textContent)
+            const inputtag = document.getElementById('timer')
+
+            t=0
+            setInterval(()=>{
+                t+=1
+                timer.innerHTML ="<b>Timer: " +t+" seconds</b>"
+                inputtag.value = t
+            },1000)
+        </script>
+    {% endblock script %}
+
 </div>
-</body>
-</html>
