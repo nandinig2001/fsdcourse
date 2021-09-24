@@ -25,11 +25,15 @@ from django.conf.urls import url
 from django.views.static import serve
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('course.urls')),
     path('',views.library),
     url(r'^download/(?P<path>.*)$',serve,{'document_root':settings.MEDIA_ROOT}),
+
+    path('admin/', admin.site.urls),
+   path('accounts/', include('allauth.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 if settings.DEBUG:
