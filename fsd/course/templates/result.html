@@ -1,19 +1,93 @@
-<div class="container ">
+{% extends 'basic.html' %}
+{% load static %}
 
-    <div class="card-columns" style="padding: 10px; margin: 20px;">
-        <div class="card" align="centre " style="width: 32rem; border:5px black solid">
-            <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
+{% block title %}Paramount{% endblock %}
+
+{% block body %}
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Poppins;
+        }
+
+        .Header {
+            padding: 7% 10% 4% 10%;
+            
+        }
+
+        .Header h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #063460;
+        }
+
+        .result-body {
+            font-size: 1.3rem;
+            padding: 3% 10%;
+            background-color: 	#E1F5F2;
+        }
+        .card{
+            border: solid 2px #063460;
+        }
+        .card-header{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            background-color:#063460 ;
+            padding: 3% 2%;
+            text-align: center;
+        }
+        .card-footer{
+            font-size: 2.5rem;
+            color: white;
+            background-color:#063460 ;
+            padding: 0.5%;
+            text-align: center;
+        }
+        .head-img{
+            width: 20%;
+            height: 60%;            
+        }
+        .trophy{
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="Header">
+        <div class="row">
+            
+            <div class="col-md-4 mx-auto my-auto">
+            <div class="trophy"><img class="head-img" src="..\static\course\images\subjects\trophy.png" height="20px" alt=""></div></div>
+        <div class="col-md-8 mx-auto my-auto" ><h1>Your Result!</h1></div>
+        </div>
+    </section>
+
+    <section class="result-body">
+
+        <div class="card">
+            <div class="card-header">
+              Score card
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Score: {{score}}</h5>
+                <h4 class="card-title my-5"><strong>Score: {{score}}</strong></h4>
 
                 <p class="card-text">Percentage: {{percent}}%</p>
                 <p class="card-text">Time Taken: {{time}} seconds</p>
                 <p class="card-text">Correct answers: {{correct}}</p>
                 <p class="card-text">Incorrect answers: {{wrong}}</p>
                 <p class="card-text">Total questions: {{total}}</p>
-                <h5>All the best for next quiz!</h5>
+                
             </div>
-        </div>
-    </div>
+            <div class="card-footer">
+                <h3 class="my-5 text-white">All the best for next quiz!</h3>
+            </div>
+          </div>
+    </section>
 
-</div>
+
+{% endblock %}

@@ -156,3 +156,6 @@ def video(request, topicName,videoid):
     count = Video.objects.filter().count()
     
     return render(request,'video.html', context={'videos': videos, 'head': head, 'loadedvideo':loadedvideo, 'topicid':topicName })
+
+def practice(request):
+    return render(request,'practice.html')
