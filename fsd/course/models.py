@@ -46,7 +46,7 @@ class Aquestions(models.Model):
     subject = models.CharField(max_length=100)
     p1 = models.CharField(max_length=800)
     p2= models.CharField(max_length=800)
-    
+
     def __str__(self):
         return self.subject
 
@@ -61,3 +61,10 @@ class Quizz(models.Model):
 
     def _str_(self):
         return self.question
+
+class FilesAdmin(models.Model):
+    adminupload=models.FileField(upload_to='media')
+    title=models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title

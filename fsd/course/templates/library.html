@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            color: #063460;
+            font-family: Poppins;
+        }
+
+        .header {
+            padding: 7% 10%;
+            background-color: #f5f2e1;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #063460;
+            text-align: center;
+        }
+
+        .card {
+            padding: 3rem;
+            background-color: #E1EEF5;
+            border: none;
+            margin: auto;
+        }
+
+        .down-btn {
+            -webkit-border-radius: 10;
+            -moz-border-radius: 10;
+            border-radius: 10px;
+            text-shadow: 1px 1px 3px #666666;
+            -webkit-box-shadow: 0px 1px 3px #666666;
+            -moz-box-shadow: 0px 1px 3px #666666;
+            box-shadow: 0px 1px 3px #666666;
+            color: white;
+            font-size: 15px;
+            background: #063460;
+            padding: 10px 15px 10px 15px;
+            text-decoration: none;
+            border: none;
+        }
+
+        .down-btn:hover {
+            background: #6BC5D2;
+            text-decoration: none;
+        }
+        .card-title{
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <h1>Resources</h1>
+    </section>
+
+    <div class="row">
+        {% for post in files %}
+        <div class="col-lg-4 col-md-6 ">
+            <div class="card" style="width: 80%;">
+                <div class="card-body">
+
+                    <h2 class="card-title ">{{post.title}}</h2>
+                    <a class="down-btn " href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+
+</html>

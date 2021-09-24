@@ -48,7 +48,7 @@ def logoutPage(request):
 
 def quizPage(request,topicid):
     if request.method == 'POST':
-             
+
 
         questions=Quizz.objects.filter(topic=topicid)
         score=0
@@ -128,7 +128,7 @@ def profile(request):
 
             return redirect('profile')
     else:
-        
+
         Pages=Page.objects.filter(user=request.user)
         context={'Pages':Pages}
         return render(request,'profile.html',context)
@@ -146,7 +146,7 @@ def problemstatement(request,topicid):
 
 
 def video(request, topicName,videoid):
-    
+
     head=''
     videos = Video.objects.filter(topic = topicName)
     loadedvideo = Video.objects.filter(topic = topicName , videoid = videoid)
@@ -154,8 +154,23 @@ def video(request, topicName,videoid):
     for items in videos:
         head = items.topicName
     count = Video.objects.filter().count()
-    
+
     return render(request,'video.html', context={'videos': videos, 'head': head, 'loadedvideo':loadedvideo, 'topicid':topicName })
 
 def practice(request):
     return render(request,'practice.html')
+
+
+
+def library(request):
+    context={'files':FilesAdmin.objects.all()}
+    return render(request,'library.html',context)
+
+def download(request,path):
+    file_path=os.path.join(settings.MEDIA_ROOT,path)
+    if os.path.exists(file_path):
+        with open(file_path,'rb')as fh:
+            response=HttpResponse(fh.read(),content_type="application/adminupload")
+            response['Content-Disposition']='inline;filename='+os.path.basename(file_path)
+            return response
+    raise Http404

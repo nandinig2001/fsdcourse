@@ -18,4 +18,5 @@ urlpatterns = [
     path('problemstatement/<str:topicid>',views.problemstatement,name='problemstatement'),
     path('video/<str:topicName>/<str:videoid>', views.video, name='video'),
     path('practice',views.practice,name='practice'),
+    path('library',views.library,name='library'),
 ]

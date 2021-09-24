@@ -13,3 +13,4 @@ class PageAdmin(admin.ModelAdmin):
     list_display=['pfname','plname','pmobile','pcollege','page','user']
 admin.site.register(Quizz)
 admin.site.register(Topic)
+admin.site.register(FilesAdmin)
