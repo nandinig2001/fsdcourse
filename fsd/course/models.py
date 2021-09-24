@@ -40,6 +40,16 @@ class Video(models.Model):
     def __str__(self):
         return self.title
 
+
+class Aquestions(models.Model):
+    topic=models.ForeignKey(Topic,on_delete=models.CASCADE)
+    subject = models.CharField(max_length=100)
+    p1 = models.CharField(max_length=800)
+    p2= models.CharField(max_length=800)
+    
+    def __str__(self):
+        return self.subject
+
 class Quizz(models.Model):
     topic=models.ForeignKey(Topic,on_delete=models.CASCADE)
     question = models.CharField(max_length=200,null=True)

@@ -5,6 +5,7 @@ from . import models
 from .models import *
 
 admin.site.register(Assignment)
+admin.site.register(Aquestions)
 admin.site.register(Video)
 # Register your models here.
 @admin.register(Page)

@@ -1,7 +1,7 @@
 {% extends 'basic.html' %}
 {% load static %}
 
-{% block title %}Assignments{% endblock %}
+{% block title %}PS Assignments{% endblock %}
 
 {% block body %}
 
@@ -16,9 +16,18 @@ body{
 .contact-form h4{
     margin-bottom: 2%;
     margin-top: 2%;
-    
+    text-align: center;
     color: #ffff;
 }
+
+
+.contact-form label{
+    margin-bottom: 2%;
+    margin-top: 2%;
+    text-align: center;
+    color: #ffff;
+}
+
 .contact-form{
     background: #5A5D9D;
     margin-top: 10%;
@@ -84,32 +93,20 @@ body{
            
             <form method="post" id="contactForm" name="contactForm">{% csrf_token%}
                 <h3>PROBLEM STATEMENTS</h3>
-                
-               <div class="row justify-content-center">
-                    <div class="col-md-6 ">
-                        <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="User Name" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="g1" id="g1" class="form-control" placeholder="Problem Statement 1 Github Link" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="w1" id="w1" class="form-control" placeholder="Problem Statement 1 Website Link" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="g2" id="g2" class="form-control" placeholder="Problem Statement 2 Github Link" value="" />
-                        </div>
+                {% for q  in questions%}
+                <label>SUBJECT : </label><br>
+                <label for="subject">{{q.subject}}</label><br>
+                <label>PROBLEM STATEMENT 1 : </label>
+                <label for="p1">{{q.p1}}</label><br>
+                <label>PROBLEM STATEMENT 2 : </label>
+                <label for="p2">{{q.p2}}</label><br>
 
-                        <div class="form-group">
-                            <input type="text"name="w2" id="w2" class="form-control" placeholder="Problem Statement 2 Website Link" value="" />
-                        </div>
-                        <div class="form-group justify-content-center">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-                            <span class="submitting"></span>
-                        </div>
-                       
-                    </div>
-                    
+                {% endfor %}
+                
+
+                <div class="container">
+               
+                <a href="{% url 'assignment' %}" role="button" class="btn btn-primary px-5 font-weight-bold text-white login-button">TAKE THE ASSIGNMENT</a>
                 </div>
             </form>
             

@@ -137,6 +137,14 @@ def quiztopic(request):
     return render(request,'quiztopic.html')
 
 
+def problemstatement(request,topicid):
+    questions= Aquestions.objects.filter(topic=topicid)
+    context = {
+         'questions':questions
+         }
+    return render(request,'problemstatement.html',context)
+
+
 def video(request, topicName,videoid):
     
     head=''

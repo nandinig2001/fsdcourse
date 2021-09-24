@@ -15,5 +15,6 @@ urlpatterns = [
     path('profile',views.profile,name='profile'),
     path('result',views.quizPage,name='result'),
     path('quiztopic',views.quiztopic,name='quiztopic'),
+    path('problemstatement/<str:topicid>',views.problemstatement,name='problemstatement'),
     path('video/<str:topicName>/<str:videoid>', views.video, name='video')
 ]
