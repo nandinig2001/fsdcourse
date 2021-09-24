@@ -1,0 +1,30 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}Paramount{% endblock %}
+
+{% block body %}
+
+<div class="col-md-8 offset-md-2">
+    <h1>Blog Index</h1>
+    <hr>
+    {% for post in posts %}
+    <h2><a href="{% url 'forum_detail' post.title post.created_on %}">{{ post.title }}</a></h2>
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p>{{ post.body | slice:":400" }}...</p>
+    {% endfor %}
+
+    <a class="btn btn-primary" href="{% url 'forum_post' %}" role="button">Create a Post</a>
+    
+
+</div>
+
+{% endblock %}

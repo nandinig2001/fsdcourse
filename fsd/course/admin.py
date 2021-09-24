@@ -14,3 +14,5 @@ class PageAdmin(admin.ModelAdmin):
 admin.site.register(Quizz)
 admin.site.register(Topic)
 admin.site.register(FilesAdmin)
+admin.site.register(Post)
+admin.site.register(Comment)

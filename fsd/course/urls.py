@@ -19,4 +19,7 @@ urlpatterns = [
     path('video/<str:topicName>/<str:videoid>', views.video, name='video'),
     path('practice',views.practice,name='practice'),
     path('library',views.library,name='library'),
+    path("forum", views.forum, name="forum"),
+     path("<str:title>/<str:created_on>", views.forum_detail, name="forum_detail"),
+     path("forum_post", views.forum_post, name="forum_post"),
 ]

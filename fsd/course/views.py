@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -46,6 +47,7 @@ def logoutPage(request):
     logout(request)
     return redirect('cover')
 
+@login_required(login_url='login')
 def quizPage(request,topicid):
     if request.method == 'POST':
 
@@ -100,6 +102,7 @@ def agnlanding(request):
     print("success")
     return render(request,'agnlanding.html')
 
+@login_required(login_url='login')
 def assignment(request):
     if request.method == 'POST':
 
@@ -113,7 +116,7 @@ def assignment(request):
         messages.success(request,'Solution Submitted')
     return render(request,'assignment.html')
 
-
+@login_required(login_url='login')
 def profile(request):
     user=request.user
     print(user.page.pfname)
@@ -144,7 +147,7 @@ def problemstatement(request,topicid):
          }
     return render(request,'problemstatement.html',context)
 
-
+@login_required(login_url='login')
 def video(request, topicName,videoid):
 
     head=''
@@ -161,7 +164,7 @@ def practice(request):
     return render(request,'practice.html')
 
 
-
+@login_required(login_url='login')
 def library(request):
     context={'files':FilesAdmin.objects.all()}
     return render(request,'library.html',context)
@@ -174,3 +177,49 @@ def download(request,path):
             response['Content-Disposition']='inline;filename='+os.path.basename(file_path)
             return response
     raise Http404
+
+
+def forum(request):
+    posts = Post.objects.all().order_by('-created_on')
+    context = {
+        "posts": posts,
+    }
+    return render(request, "forum.html", context)
+
+@login_required(login_url='login')
+def forum_detail(request, title, created_on):
+    posts = Post.objects.filter(title=title)
+    form = CommentForm()
+    if request.method == 'POST':
+        comment = Comment(
+            user=request.user,
+            body=request.POST.get("body",""),
+            post = posts[0]
+        )
+        comment.save()
+    comments = Comment.objects.filter(post__id__in=posts)
+    context = {
+        "posts": posts,
+        "comments": comments,
+        "form":form,
+    }
+    return render(request, "forum_detail.html", context)
+
+@login_required(login_url='login')
+def forum_post(request):
+    post_form = PostForm()
+    if request.method == 'POST':
+        post = Post(
+            title=request.POST.get("title",""),
+            user=request.user,
+            body=request.POST.get("body",""),   
+        )
+        post.save()
+    context = {
+        "post_form":post_form,
+    }
+
+    args= {}
+    args['post_form']= post_form
+
+    return render(request, "forum_post.html", args)
