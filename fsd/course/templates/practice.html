@@ -17,11 +17,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{%static 'course/fonts/icomoon/style.css' %}">
   <link rel="stylesheet" href="{%static 'course/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{%static 'course/css/lightslider.css' %}">
-  <link rel="stylesheet" href="{%static 'course/css/hospitalSlider.css' %}">
   <link rel="stylesheet" href="{%static 'course/css/basic.css' %}">
   <link rel="stylesheet" href="./static/course/css/index.css">
-  <link rel="stylesheet" href="../../static/course/css/video.css">
+
 
 <style type="text/css">
 * {
@@ -72,7 +70,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #6BC5D2;">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#"> <img src="https://cdn-icons-png.flaticon.com/512/4135/4135908.png" alt=""
                     width="30" height="30"> Paramount</a>
@@ -89,6 +87,9 @@
                         <a class="nav-link " href="{% url 'quiztopic' %}">Quiz</a>
                     </li>
                     <li class="nav-item px-2">
+                      <a class="nav-link " href="{% url 'library' %}">Library</a>
+                  </li>
+                    <li class="nav-item px-2">
                         <a class="nav-link " href="{% url 'agnlanding' %}">Assignments</a>
                     </li>
                     <li class="nav-item px-2">
@@ -97,7 +98,7 @@
                     <li class="nav-item px-2">
                         <a class="nav-link " href="{% url 'aboutus' %}">About</a>
                     </li>
-                    
+
                     <li class=" dropdown px-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,6 +114,7 @@
             </div>
         </div>
     </nav>
+
 
 
   <div class="flexing">

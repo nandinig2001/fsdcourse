@@ -65,6 +65,7 @@ class Quizz(models.Model):
 class FilesAdmin(models.Model):
     adminupload=models.FileField(upload_to='media')
     title=models.CharField(max_length=50)
+    imageurl = models.ImageField(upload_to='media', null=True)
 
     def __str__(self):
         return self.title
