@@ -77,7 +77,7 @@ footer {
     position: relative;
     height: 50px;
     width: 100%;
-    background-color: #E4F6F3;
+    
 }
 
 p.copyright {
@@ -190,3 +190,79 @@ p.copyright {
   .abt-active {
       background-color: #E1F5F2;
   }
+
+
+ 
+  .heading{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  .header {
+    padding: 5% 0 2% 0;
+    margin-top: 1%;
+  }
+  .nav-link:hover {
+    border-bottom: 2px solid #063460;
+  }
+
+  .dropdown-toggle:hover {
+    border-bottom: none;
+  }
+
+  .active {
+    border-bottom: 2px solid #063460;
+  }
+
+  .nav-link {
+    color: #063460;
+  }
+
+  .profile {
+    padding: 5% 10%;
+    background-color: #E1F5F2;
+  }
+
+  .student {
+    width: 90%;
+    padding: 3rem 0;
+  }
+  .profile label {
+    font-size: 1.4rem;
+  }
+  .save-btn {
+  
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: white;
+  font-size: 17px;
+  background: #063460;
+  padding: 5px;
+  text-decoration: none;
+  border: none;
+  width: 15%;
+}
+
+.card img{
+    height: 12rem;
+}
+
+.blue-btn:hover {
+  background: #6BC5D2;
+  text-decoration: none;
+  color: white;
+}
+.pro-content{
+  padding: 3rem 0;
+}
+
+.form-control{
+    width: 80%;
+    border-radius: 0;
+}
+
+.aligning{
+    align-items: center;
+}

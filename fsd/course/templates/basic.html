@@ -18,52 +18,12 @@
   <link rel="stylesheet" href="{%static 'course/fonts/icomoon/style.css' %}">
   <link rel="stylesheet" href="{%static 'course/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{%static 'course/css/lightslider.css' %}">
-  
- 
   <link rel="stylesheet" href="{%static 'course/css/hospitalSlider.css' %}">
-
+  <link rel="stylesheet" href="{%static 'course/css/basic.css' %}">
+  <link rel="stylesheet" href="./static/course/css/index.css">
+  <link rel="stylesheet" href="../../static/course/css/video.css">
 
   <style type="text/css">
-* {
-    margin: 0px;
-    padding: 0px;
-    color: #063460;
-    font-family: Poppins;
-}
-
-img{
-  display: inline-block;
-}
-
-.nav-link:hover {
-    border-bottom: 2px solid #063460;
-}
-
-.dropdown-toggle:hover {
-    border-bottom: none;
-}
-
-.active{
-    border-bottom: 2px solid #063460;
-}
-
-.nav-link{
-    color: #063460;
-}
-
-.feat {
-    padding: 1% 3%;
-    text-align: center;
-}
-
-
-footer {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    background-color: #E4F6F3;
-}
-
 
   </style>
 
@@ -90,13 +50,13 @@ footer {
             <div class=" collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item px-2">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link " href="#">Quiz</a>
+                        <a class="nav-link " href="{% url 'quiztopic' %}">Quiz</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link " href="#">Assignments</a>
+                        <a class="nav-link " href="{% url 'assignment' %}">Assignments</a>
                     </li>
                     <li class=" dropdown px-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -105,9 +65,9 @@ footer {
                                 width="30" height="30">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="./about.html">About</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
