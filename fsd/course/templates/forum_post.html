@@ -1,4 +1,11 @@
-<div class="col-md-8 offset-md-2">
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}Paramount{% endblock %}
+
+{% block body %}
+
+<div class="col-md-8 offset-md-2 forum-head">
     <h3>Write your post:</h3> 
         <form method='POST' action="">
             {% csrf_token %}
@@ -10,3 +17,5 @@
             </div> 
             <button type="submit" class="btn btn-primary" href="{% url 'forum_post' %}" role="button">Submit</button> 
         </form>
+
+{% endblock %}

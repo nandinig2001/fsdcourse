@@ -271,3 +271,46 @@ a:hover{
   text-decoration: none;
 }
 
+.forum-head{
+  margin-top: 6%;
+}
+
+.forum-subhead{
+  color: #6BC5D2;
+}
+
+.forum-subhead:hover{
+  color:#063460;
+}
+
+.forum-head h1{
+  font-weight: 600;
+}
+
+.create-btn {
+  
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: white;
+  font-size: 17px;
+  background: #063460;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: none;
+}
+
+.create-btn:hover {
+  
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  color: white;
+  font-size: 17px;
+  background: #063460;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: none;
+}
