@@ -328,3 +328,7 @@ a:hover{
   text-decoration: none;
   border: none;
 }
+
+.post-detail{
+  margin-top: 6%;
+}

@@ -4,8 +4,7 @@
 {% block title %}Paramount{% endblock %}
 
 {% block body %}
-
-<div class="container">
+<div class=" col-md-8 offset-md-2 ">
     <h1 >Post Detail</h1>
     <hr>
     {% for post in posts %}
@@ -14,7 +13,7 @@
         {{ post.created_on.date }} |&nbsp;
     </small>
     <p>{{ post.body }}</p>
-    <div class="col-md-8 offset-md-2">
+    <div>
         <h3>Add Comments:</h3> 
             <form method='POST' action="">
                 {% csrf_token %}
@@ -26,18 +25,18 @@
             </form>
     </div>
     {% endfor %}
-    <h2>Comments</h2>
+    <h2 class="mt-5">Comments</h2>
 
     {% for comment in comments %}
     <small>
         {{ comment.created_on.date }} |&nbsp;
     </small>
     <h3>{{ comment.user }}</h3>
-    <p>{{ comment.body }}</p>
+    <p class="mb-5">{{ comment.body }}</p>
     {% endfor %}
 
 </div>
 </div>
-    
+
 
 {% endblock %}
